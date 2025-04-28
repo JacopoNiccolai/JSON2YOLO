@@ -254,9 +254,9 @@ def convert_ath_json(json_dir):  # dir contains json annotations and images
     print(f"Done. Output saved to {Path(dir).absolute()}")
 
 
-def convert_coco_json(json_dir="../coco/annotations/", use_segments=False, cls91to80=False):
+def convert_coco_json(json_dir="../coco/annotations/", labels_dir="new_dir/", use_segments=False, cls91to80=False):
     """Converts COCO JSON format to YOLO label format, with options for segments and class mapping."""
-    save_dir = make_dirs()  # output directory
+    save_dir = make_dirs(labels_dir)  # output directory
     coco80 = coco91_to_coco80_class()
 
     # Import json
